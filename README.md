@@ -1,2 +1,2 @@
-# C012-Quiz-Game
-Game created in Unity for Operational Systems class
+# Game-Lesao-Friccao
+Game made for Univas Cientific Research
