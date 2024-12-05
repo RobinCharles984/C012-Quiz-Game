@@ -687,8 +687,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Autores\n\nTales Machado Prudente\n\nJo\xE3o Vitor Scodeler de Souza\n\nJ\xFAlia
-    de Freitas Carvalho\n"
+  m_text: "Autores\n\nTales Machado Prudente\n\nJo\xE3o Vitor Scodeler de Souza\n\nLucas
+    Moreira Teixeira\n\nJ\xFAlia de Freitas Carvalho\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 816daeed07ff44c419e2d402187e9505, type: 2}
   m_sharedMaterial: {fileID: -1613512132814696958, guid: 816daeed07ff44c419e2d402187e9505, type: 2}

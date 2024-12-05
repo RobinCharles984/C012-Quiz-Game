@@ -1,0 +1,219 @@
+1)
+Considerando os conceitos básicos sobre memória principal, marque a afirmação falsa a seguir:
+
+A memória principal é protegida, ou seja, os programas de usuário devem acessar apenas a região de memória delimitada pelos registradores base e limite.
+
+X A CPU pode acessar diretamente seus registradores, a memória cache e a memória principal, mas não a memória secundária.
+
+A memória de swap é uma região na memória secundária usada para armazenar partes de processos quando não há espaço suficiente na memória principal.
+
+Apenas o SO, executando na modalidade Kernel, tem acesso irrestrito, tanto à sua própria memória quanto à memória dos processos de usuários.
+
+2)
+Considerando os esquemas de alocação de memória, marque a afirmação Verdadeira:
+
+Na paginação, o espaço de endereçamento do processo é subsequente, o mapeamento de um Processo na memória pode ser definido apenas pelos valores do Registradores Relocation e Limit.
+
+A técnica de paginação causa o problema de fragmentação externa.
+
+X Aplicar a técnica de paginação em grandes segmentos permite que apenas as páginas realmente necessárias para cada segmento sejam alocadas na memória.
+
+Na alocação contígua de tamanho variável, um novo processo vai ser sempre alocado na menor partição grande o bastante para alocá-lo.
+
+3)
+Sobre a vinculação de endereços na memória principal, selecione a afirmação verdadeira:
+
+A MMU (Memory Management Unit) é um dispositivo de Hardware que mapeia endereços lógicos em endereços físicos em tempo de compilação.
+
+Na vinculação em tempo de execução, é gerado um código de endereçamento realocável que vai ser mapeado para uma região da memória quando o programa for carregado.
+
+Na vinculação em tempo de carga, o endereçamento é totalmente dinâmico, podendo mudar de segmento de memória a medida que o processo é executado.
+
+X Na vinculação em tempo de compilação, uma região fixa da memória é alocada para cada programa.
+
+4)
+Sobre a técnica de memória virtual, selecione a afirmação verdadeira:
+
+Quando um processo tenta acessar uma página que não está na memória, uma exceção chamada Page Fault acontece, o que engatilha o processo de substituição de páginas.
+
+A Paginação por Demanda é uma técnica utilizada em sistemas de memória virtual que permite carregar todas as páginas de processos quando eles são escalonados.
+
+O tamanho das páginas podem impactar na performance da técnica de paginação por demanda, porque páginas pequenas podem reduzir o overhead enquanto páginas grandes reduz o tamanho das tabelas de páginas.
+
+X Memória Virtual é uma técnica que permite a execução de processos que não estejam completamente na memória principal.
+
+5)
+Sobre a substituição de páginas, marque a afirmação falsa:
+
+X As etapas do processo para fazer a substituição de uma página são: enviar a página escolhida para a memória de swap, marcar essa página como inválida na tabela de páginas, buscar a nova página requisitada da memória de swap e, por fim, marcar como válida a página vítima na tabela de paginação.
+
+É realizada apenas quando acontece o problema de over-allocation.
+
+Em casos de super-alocação, pode-se remover um processo qualquer para o disco. Porém esse é um método radical usado quando as taxas de page faults são altas no sistema.
+
+Pode-se definir um algoritmo para escolher uma página vítima específica, como FIFO, LRU ou LFU.
+
+6)
+Sobre os algoritmos de substituição de páginas, selecione a afirmação falsa:
+
+X Os algoritmos LFU e MFU levam em consideração um contador de número de vezes que uma página foi referenciada. A diferença entre eles é que o LFU considera como vítima a que tem o maior valor do contador, enquanto o MFU escolhe a página com o menor valor do contador.
+
+O algoritmo LRU usa um processo inverso ao Optmial. Ele mantém uma lista das páginas usadas mais recentemente e escolhe como vítima aquela que foi usada há mais tempo.
+
+O algoritmo Optimal é um algoritmo muito performático que tenta prever as próximas páginas a serem requisitadas e escolhe como página vítima aquela que não será usada pelo período mais longo de tempo.
+
+Além de ser uma técnica pouco eficiente, a FIFO sofre da anomalia de Belady onde o número de page faults aumenta quando o número de quadros alocados aumenta.
+
+7)
+Sobre os algoritmos de substituição de páginas, marque a afirmação falsa:
+
+X Apesar de ser um algoritmo muito eficiente, o Optimal é muito complexo de ser desenvolvido e garante a menor taxa de page faults.
+
+FIFO é o algoritmo mais simples, onde a página mais antiga será sempre escolhida como página vítima.
+
+O algoritmo Second Chance é implementado como uma FIFO. Porém sempre que uma página é escolhida como vítima, é dada a ela mais uma chance. Dessa forma, ela só vai ser substituída na próxima vez que ela for escolhida como página vítima. A fila nesse caso precisa ser uma fila circular.
+
+O algoritmo LRU não sofre da anomalia de Belady, mas não é o único algoritmo com essa característica.
+
+8)
+Sobre os sistemas de I/O, selecione a afirmação verdadeira:
+
+Uma chamada de I/O pode ser programada de forma síncrona, assíncrona ou por interrupção. 
+
+Entre as diversas funcionalidades de um sistema de gerenciamento de dispositivos de I/O estão: Carregamento e atualização de drivers, alocação de recursos, gerenciamento de energia, configuração e personalização e detecção/resolução de problemas.
+
+Refere-se à comunicação entre o computador e o mundo externo através de dispositivos.
+
+X Pensando em um computador de uso pessoal, um dispositivo de I/O pode ser qualquer componente de hardware onde há entrada e saída de dados, como a placa de vídeo, o monitor, uma memória RAM ou um SSD, por exemplo.
+
+9)
+Considerando as funções do Scheduler e do Dispatcher, marque a afirmação verdadeira a seguir:
+
+Troca de contexto é a operação de escolher qual processo da fila de Ready será executado.
+
+X O despachante é o componente responsável por carregar as informações do processo que vai assumir o controle do processador.
+
+O escalonador em um sistema operacional tem a função de fazer a troca de contexto.
+
+Latência de despacho é o tempo que um processo fica esperando na fila de Ready.
+
+10)
+Considerando os critérios comparação entre os algoritmos de escalonamento, marque a afirmação verdadeira:
+
+A vazão (throughput) é a quantidade total de tempo desde a submissão de um processo até o primeiro uso da CPU e precisa ser aumentada.
+
+Tempo de resposta é o tempo total que um processo leva para completar seu processamento e precisa ser aumentado.
+
+X Tempo de turnaround é o tempo total da vida de um processo, desde a sua submissão até o seu término e precisa ser diminuído.
+
+Utilização da CPU está relacionado com o tempo que o processador fica ocioso e deve ser diminuída.
+
+11)
+Sobre os algoritmos MQS e MFS, selecione a afirmação verdadeira:
+
+Processos CPU-bound se deslocam para filas de menor prioridade e IO-Bound se deslocam para filas de maior prioridade.
+
+X Existe um escalonador entre as filas, com prioridade fixa e com preempção.
+
+Utilizam aging para evitar starvation.
+
+Os processos são permanentemente designados para somente uma das filas de acordo com suas características.
+
+12)
+Sobre escalonamento em sistema com múltiplos processadores, selecione a afirmação verdadeira:
+
+No multiprocessamento assimétrico, tanto a CPU master quanto as workers acessam a fila de prontos:
+
+No multiprocessamento simétrico, como todas as CPUs têm o mesmo nível hierárquico, elas sempre acessam uma única fila de prontos.
+
+X Load balancing é uma política definida pelo SO de forma a distribuir uniformemente a carga de processamento entre vários processadores.
+
+Na migração por absorção a carga de uma CPU é verificada constantemente de forma que quando um desequilíbrio é detectado, tenta equilibrar a carga entre as CPUs.
+
+13)
+Sobre o problema da seção crítica, selecione a afirmação falsa:
+
+Dependendo da ordem de acesso à uma CS, uma variável, por exemplo, pode assumir diversos valores, podendo causar inconsistências no sistema.
+
+X Race condition acontece quando a execução de um processo qualquer pode ser afetada por outro processo.
+
+Seção crítica (critical section) é um recurso computacional compartilhado (geralmente uma parte de código) que precisa ter o acesso controlado para evitar a race condition.
+
+Exclusão mútua é o bloqueio da CS de forma que, se um processo está executando em um CS, nenhum outro pode estar executando neta CS ao mesmo tempo.
+
+14)
+Sobre o funcionamento dos semáforos, selecione a afirmação falsa:
+
+Por meio dos métodos teóricos wait e signal, os semáforos permitem o controle de acesso de vários processos a uma seção crítica ao mesmo tempo.
+
+Semáforos que usam busy waiting são chamados de spinlocks. Podemos fazer uma troca de contexto para evitar que um processo que espera para acessar uma CS não despedisse ciclos de CPU.
+
+Um semáforo binário só permite o acesso à seção crítica por um processo de cada vez.
+
+X Espera em ação (busy waiting) acontece quando um processo está na fila de prontos e ainda não foi escolhido pelo escalonador.
+
+15)
+Sobre a aplicação dos semáforos, selecione a afirmação verdadeira:
+
+Um semáforo pode resolver o problema de deadlock porque ele pode bloquear o acesso aos recursos, de forma que nenhum processo possa usar algum recurso ao mesmo tempo.
+
+Um monitor permite que vários processos possam estar ativos ao mesmo tempo. Em Java, basta adicionar o modificador syncronized em um método para tornar a classe um monitor.
+
+Semáforos podem ser aplicados para resolver o problema do buffer cheio, bloqueando a entrada de dados quando o buffer está sendo escrito por outro produtor. 
+
+X  Para utilizar um semáforo em Java podemos chamar os métodos acquire e release da classe Semaphore.
+
+16)
+Sobre hyper-threading, selecione a afirmação falsa:
+
+X Memory Stall acontece quando uma CPU com múltiplos núcleos (multicore) acessa a memória.
+
+É uma técnica utilizada para resolver o problema da queda de memória (memory stall).
+
+Um sistema dual-core e dual-thread tem quatro CPUs lógicas.
+
+Threads de hardware são executadas diretamente pelos diferentes núcleos de uma CPU multicore.
+
+17)
+Qual das alternativas a seguir é a principal função de um Sistema Operacional?
+
+Gerenciar a comunicação entre programas aplicativos.
+
+X Controlar a execução de processos e gerenciar o uso de recursos de hardware.
+
+Proteger dados de usuários de vírus e malware.
+
+Criar interfaces gráficas para interação com o usuário.
+
+18)
+Qual dos seguintes componentes NÃO faz parte do sistema operacional?
+
+Gerenciador de arquivos
+
+Gerenciador de processos
+
+X Programa antivírus
+
+Gerenciador de memória
+
+19)
+O que é um "processo" em um Sistema Operacional?
+
+X Um programa em execução, incluindo o estado atual da CPU e da memória.
+
+A execução de um comando pelo usuário.
+
+Um arquivo armazenado no disco rígido.
+
+A interação entre o usuário e o computador.
+
+20)
+O que é o "núcleo" (kernel) de um Sistema Operacional?
+
+X O software que gerencia o hardware e os recursos de sistema, como processos e memória.
+
+A interface gráfica que permite a interação com o usuário.
+
+O componente que gerencia a comunicação entre a rede e o sistema.
+
+O sistema de arquivos usado para armazenar dados.

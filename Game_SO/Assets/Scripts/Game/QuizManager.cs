@@ -56,9 +56,9 @@ public class QuizManager : MonoBehaviour
     private void Update()
     {
         //Win or Loose
-        if (answeredCards >= 30)
+        if (answeredCards >= 20)
         {
-            if (totalPoints >= 24)
+            if (totalPoints >= 16)
             {
                 winningCanvas.SetActive(true);
                 GameManager.instance.gameComplete = true;

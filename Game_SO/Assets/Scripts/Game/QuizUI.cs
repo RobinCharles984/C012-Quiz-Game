@@ -16,15 +16,15 @@ public class QuizUI : MonoBehaviour
     [SerializeField] private BoardUI boardUI;
     [SerializeField] private Image image;
     private bool answered;
-    
+
     //Cards
     [SerializeField] private List<Sprite> cardImages;
-    [SerializeField]private TMP_Text cardQuestion;
-    [SerializeField]private List<Button> options;
-    [SerializeField]private Image cardImage;
-    [SerializeField]private Image cardColor;
-    [SerializeField]private TMP_Text correctText;
-    [SerializeField]private Button nextCard;
+    [SerializeField] private TMP_Text cardQuestion;
+    [SerializeField] private List<Button> options;
+    [SerializeField] private Image cardImage;
+    [SerializeField] private Image cardColor;
+    [SerializeField] private TMP_Text correctText;
+    [SerializeField] private Button nextCard;
 
     private void Awake()
     {
@@ -97,15 +97,6 @@ public class QuizUI : MonoBehaviour
 
         nCard = boardUI.cardNumber;
 
-        //Blocking all cards first
-        for (int i = 0; i < 4; i++)
-        {
-            options[i].gameObject.name = "";
-            options[i].GetComponentInChildren<TMP_Text>().text = "";
-            options[i].image.color = normalColor;
-            options[i].interactable = false;
-        }
-
         //If card was already correct answered
         if (board.phaseCards[nCard].cardAnswered)
         {
@@ -118,9 +109,9 @@ public class QuizUI : MonoBehaviour
                 options[i].image.color = wrongColor;
                 options[i].interactable = false;
                 if (options[i].gameObject.name == board.phaseCards[nCard].correctAnswer) options[i].image.color = correctColor;
-                if(board.phaseCards[nCard].correctAnswered)     
+                if (board.phaseCards[nCard].correctAnswered)
                     correctText.text = "Resposta Certa!";
-                
+
                 else
                     correctText.text = "Resposta Errada!";
 
@@ -132,8 +123,8 @@ public class QuizUI : MonoBehaviour
             correctText.gameObject.SetActive(true);
 
             answered = true;
-        
-            cardImage.sprite = board.phaseCards[nCard].cardImage;   
+
+            cardImage.sprite = board.phaseCards[nCard].cardImage;
         }
         else //If not
         {
@@ -153,11 +144,11 @@ public class QuizUI : MonoBehaviour
             correctText.text = "";
 
             answered = false;
-        
-            image.sprite = board.phaseCards[nCard].cardImage;  
+
+            image.sprite = board.phaseCards[nCard].cardImage;
         }
     }
-    
+
     //Clicking the next button
     public void NextButton(Button btn, Board board)
     {

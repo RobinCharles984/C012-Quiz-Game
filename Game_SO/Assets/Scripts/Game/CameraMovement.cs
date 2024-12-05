@@ -48,7 +48,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            PanCamera();
+            //PanCamera();
         }
     }
 

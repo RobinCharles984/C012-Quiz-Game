@@ -13,14 +13,14 @@ public class BoardUI : MonoBehaviour
     [SerializeField] private QuizManager quizManager;
     private Board board;
     private Animator anim;
-    [HideInInspector]public bool selected;
+    [HideInInspector] public bool selected;
     [HideInInspector] public int cardNumber;
-    
+
     //Boards
-    [SerializeField]private TMP_Text phaseName;
+    [SerializeField] private TMP_Text phaseName;
     [SerializeField] public TMP_Text phasePoints;
-    [SerializeField]private Color phaseColor;
-    [SerializeField]private Image phaseImage;
+    [SerializeField] private Color phaseColor;
+    [SerializeField] private Image phaseImage;
     [SerializeField] private SpriteRenderer phaseBg;
     [SerializeField] public List<Button> phaseCards;
     [SerializeField] public List<Image> phaseCardsBacks;
@@ -45,40 +45,20 @@ public class BoardUI : MonoBehaviour
         switch (quizManager.answeredCards)
         {
             case 0:
-                phaseName.text = "Fase 1: Definição de lesão por pressão";
+                phaseName.text = "Fase 1: Memória Principal";
                 anim.SetInteger("board", 0);
                 break;
             case 5:
-                phaseName.text = "Fase 2: Fatores de risco para o paciente adquirir lesão por pressão.";
+                phaseName.text = "Fase 2: Páginas";
                 anim.SetInteger("board", 1);
                 break;
             case 10:
-                phaseName.text = "Fase 3: Classificação do estágio da lesão por pressão";
+                phaseName.text = "Fase 3: Scheduling e Threads";
                 anim.SetInteger("board", 2);
                 break;
             case 15:
-                phaseName.text = "Fase 4: “Avaliação da lesão por pressão”:";
+                phaseName.text = "Fase 4: SO em Geral";
                 anim.SetInteger("board", 3);
-                break;
-            case 20:
-                phaseName.text = "Fase 5: Medidas preventivas para lesão por pressão";
-                anim.SetInteger("board", 4);
-                break;
-            case 25:
-                phaseName.text = "Fase 6: Técnica e tipo de limpeza da lesão por pressão";
-                anim.SetInteger("board", 5);
-                break;
-            case 30:
-                phaseName.text = "Fase 7: Definição e tipo de desbridamento de lesão por pressão”:";
-                anim.SetInteger("board", 6);
-                break;
-            case 35:
-                phaseName.text = "Fase 8: Tipos de coberturas e dispositivos para tratar lesão por pressão”:";
-                anim.SetInteger("board", 7);
-                break;
-            case 40:
-                phaseName.text = "Fase 9: Esta última etapa, têm por objetivo fornecer aos Profissionais enfermeiros, as condutas terapêuticas de acordo do estágio da lesão por pressão.";
-                anim.SetInteger("board", 8);
                 break;
         }
     }
@@ -106,11 +86,11 @@ public class BoardUI : MonoBehaviour
             phaseCards[i].gameObject.SetActive(false);
             board.phaseCards[i].cardUnlocked = false;
             board.phaseCards[i].cardAnswered = false;
-            
+
             phaseCards[i].GetComponent<Image>().color = lockedCardColor;
             phaseCards[i].interactable = false;
         }
-        
+
         //Unlocking the first card
         board.phaseCards[0].cardUnlocked = false;
         phaseCards[0].image.color = normalCardColor;
@@ -118,7 +98,7 @@ public class BoardUI : MonoBehaviour
 
         selected = false;
     }
-    
+
     void OnClick(Button btn)
     {
         if (!selected)
